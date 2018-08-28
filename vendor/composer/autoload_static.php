@@ -7,35 +7,39 @@ namespace Composer\Autoload;
 class ComposerStaticInit185c154afb5921594a6369a5970f1b49
 {
     public static $prefixLengthsPsr4 = array (
-        'm' => 
-        array (
-            'models\\entity\\Base\\' => 19,
-        ),
-        'l' => 
-        array (
-            'lib\\view\\Widok\\' => 15,
-            'lib\\config\\Configs\\' => 19,
-        ),
         'a' => 
         array (
-            'a\\Controller\\' => 13,
+            'app\\lib\\view\\' => 13,
+            'app\\lib\\uri\\' => 12,
+            'app\\lib\\router\\' => 15,
+            'app\\lib\\config\\' => 15,
+            'app\\core\\' => 9,
+            'app\\controller\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'models\\entity\\Base\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/models/entity',
-        ),
-        'lib\\view\\Widok\\' => 
+        'app\\lib\\view\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/lib/view',
         ),
-        'lib\\config\\Configs\\' => 
+        'app\\lib\\uri\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/lib/uri',
+        ),
+        'app\\lib\\router\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/lib/router',
+        ),
+        'app\\lib\\config\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/lib/config',
         ),
-        'a\\Controller\\' => 
+        'app\\core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/core',
+        ),
+        'app\\controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/controllers',
         ),

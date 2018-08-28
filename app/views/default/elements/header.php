@@ -1,5 +1,5 @@
 <header>
-<?php
-echo "Nagłówek";
-?>
+<?=$this->buildLink('Pokaż slider', 'user/index', "left");?>
+<?=$this->buildLink('Dodaj obraz', 'user/add', "left");?>
+<?=$this->buildLink('Pokaż listę obrazów', 'user/show', "left");?>
 </header>

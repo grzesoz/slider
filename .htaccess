@@ -1,0 +1,12 @@
+#Block multiviews
+Options -MultiViews
+
+#Run Rewrite Engine
+RewriteEngine ON
+
+#Checking exists files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Rewrite url
+RewriteRule ^.+$ index.php [QSA,L]

@@ -6,8 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'models\\entity\\Base\\' => array($baseDir . '/app/models/entity'),
-    'lib\\view\\Widok\\' => array($baseDir . '/app/lib/view'),
-    'lib\\config\\Configs\\' => array($baseDir . '/app/lib/config'),
-    'a\\Controller\\' => array($baseDir . '/app/controllers'),
+    'app\\lib\\view\\' => array($baseDir . '/app/lib/view'),
+    'app\\lib\\uri\\' => array($baseDir . '/app/lib/uri'),
+    'app\\lib\\router\\' => array($baseDir . '/app/lib/router'),
+    'app\\lib\\config\\' => array($baseDir . '/app/lib/config'),
+    'app\\core\\' => array($baseDir . '/app/core'),
+    'app\\controller\\' => array($baseDir . '/app/controllers'),
 );

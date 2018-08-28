@@ -1,13 +1,17 @@
 <?php
 
-namespace lib\view\Widok;
+namespace app\lib\view;
+
+use app\lib\uri;
 
 class View{
     
     private $config;
+    private $uri;
     
     public function __construct($config=null) {
         $this->config = $config;
+        $this->uri = new uri\URI();
     }
     
     /**
@@ -69,18 +73,18 @@ class View{
         if($css != null){
             $cssArr = explode(" ", $css);
             foreach ($cssArr as $one) {
-                echo '<link rel="stylesheet" type="text/css" href=public/css/'.$one.'.css>';
+                echo '<link rel="stylesheet" type="text/css" href=../public/css/'.$one.'.css>';
             }   
         }
     }
     
     public function loadJs($js) {
         if($js != null){
-            echo '<script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script>';
+            echo '<script type="text/javascript" src="../public/js/jquery-3.3.1.min.js"></script>';
             
             $jsArr = explode(" ", $js);
             foreach ($jsArr as $one) {
-                echo '<script type="text/javascript" src="public/js/'.$one.'.js"></script>';
+                echo '<script type="text/javascript" src="../public/js/'.$one.'.js"></script>';
             }   
         }
     }
@@ -88,7 +92,7 @@ class View{
     
     public function startForm($action, $method = 'post', $id=null){
         
-        $html = '<form action="'.$action.'.php"';
+        $html = '<form action="'.$action.'"';
         $html .= 'method='.$method .' ';
       
         if($id!=null){
@@ -107,9 +111,50 @@ class View{
         return $html;
     }
     
-//    public function buildLink(){
+//    public function buildLink($name, $data, $class = null, $target = null){
 //        
-//        $html = '<a href="' . $this->uri->getBase() . '/' . $data . '"';
+//        $uri = new uri\URI();
+//        
+//        $html = '<a href="' . $uri->getDir() . '/' . $data . '"';
+//
+//        if($class!= null){
+//            $html .= 'class="';
+//            $html .= $class;
+//            $html .= '"';
+//            }   
+//        
+//
+//        if ($target != null) {
+//            $html .= ' target=" '. $target . '"';
+//        }
+//
+//        $html .= '>' . $name . '</a>';
+//
+//        return $html;
+//        
 //    }
+    
+        public function buildLink($name, $data, $class = null, $target = null){
+        
+        $html = '<a href="' . $this->uri->getDir() . '/' . $data . '"';
+
+        if($class!= null){
+            $html .= 'class="';
+            $html .= $class;
+            $html .= '"';
+            }   
+        
+
+        if ($target != null) {
+            $html .= ' target=" '. $target . '"';
+        }
+
+        $html .= '>' . $name . '</a>';
+
+        return $html;
+        
+    }
+
+
 }
 

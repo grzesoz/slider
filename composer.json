@@ -1,10 +1,12 @@
 {
     "autoload": {
         "psr-4": {
-            "lib\\view\\Widok\\": "app/lib/view/",
-            "lib\\config\\Configs\\": "app/lib/config/",
-            "lib\\uri\\URI\\": "app/lib/uri/",
-            "models\\entity\\Base\\": "app/models/entity/"
+            "app\\lib\\view\\": "app/lib/view/",
+            "app\\lib\\config\\": "app/lib/config/",
+            "app\\lib\\uri\\": "app/lib/uri/",
+            "app\\lib\\router\\": "app/lib/router/",
+            "app\\controller\\": "app/controllers/",
+            "app\\core\\": "app/core/"
         }
     }
 }
