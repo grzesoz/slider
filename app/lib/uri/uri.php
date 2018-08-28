@@ -13,13 +13,15 @@ class URI{
             if($_SERVER['REQUEST_URI']!=='/'){
                 $requestUriArr = explode("/", $_SERVER['REQUEST_URI']);
                 $this->controler = $requestUriArr[1];
-                $this->method = $requestUriArr[2];
+                
+                if(isset($requestUriArr[2])){
+                    $this->method = $requestUriArr[2];
+                }
             }
             else{
                 $this->controler = "user";
                 $this->method = "index";
             }
-
         }
         
          public function getDir(){

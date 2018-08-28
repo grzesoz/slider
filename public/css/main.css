@@ -5,3 +5,8 @@ body{
 header {
     background-color: #4a83e0;
 }
+
+.left{
+    padding:10px;
+    float: left;
+}

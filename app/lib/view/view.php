@@ -25,7 +25,11 @@ class View{
         require_once 'app/views/layout/layout.php';
     }
     
-    public function showError($code, $message, $css = "errorCSS") {
+    public function showError($code, $message, $css = "errorCSS main") {
+        
+        $data['code']=$code;
+        $data['message']=$message;
+        
        require_once 'app/views/layout/layoutError.php';
     }
     
@@ -33,7 +37,7 @@ class View{
      * Method which load element
      * @param $element - add this element
      * */   
-    public function importElement($element, $directory = "default") {
+    public function importElement($element , $data = [] , $directory = "default") {
         if (file_exists('app/views/' . $directory . "/elements/" . $element . '.php')) {
             require_once 'app/views/' . $directory . "/elements/" . $element . '.php';
         } else {
@@ -88,19 +92,18 @@ class View{
             }   
         }
     }
-    
-    
+        
     public function startForm($action, $method = 'post', $id=null){
         
-        $html = '<form action="'.$action.'"';
-        $html .= 'method='.$method .' ';
-      
-        if($id!=null){
-            $html .= 'id="'.$id.'" ';
-        }
-         
-                 
-          $html .= '>';       
+            $html = '<form action="'.$action.'"';
+            $html .= 'method='.$method .' ';
+
+            if($id!=null){
+                $html .= 'id="'.$id.'" ';
+            }
+
+             $html .= '>';       
+             
         return $html;
     }
     
@@ -111,30 +114,30 @@ class View{
         return $html;
     }
     
-//    public function buildLink($name, $data, $class = null, $target = null){
-//        
-//        $uri = new uri\URI();
-//        
-//        $html = '<a href="' . $uri->getDir() . '/' . $data . '"';
-//
-//        if($class!= null){
-//            $html .= 'class="';
-//            $html .= $class;
-//            $html .= '"';
-//            }   
-//        
-//
-//        if ($target != null) {
-//            $html .= ' target=" '. $target . '"';
-//        }
-//
-//        $html .= '>' . $name . '</a>';
-//
-//        return $html;
-//        
-//    }
+    public function buildLink($name, $data, $class = null, $target = null){
+
+        $html = '<a href="' . $this->uri->getDir() . '/' . $data . '"';
+
+        if ($target != null) {
+            $html .= ' target=" '. $target . '"';
+        }
+
+        $html .= '>' ;
+                
+        $html.=  '<div ';
+
+        if($class!= null){
+            $html .= 'class="';
+            $html .= $class;
+            $html .= '"';
+            }  
+        $html.='>' . $name . '</div>'.'</a>' ;      
+
+        return $html;
+        
+    }
     
-        public function buildLink($name, $data, $class = null, $target = null){
+    public function buildLink2($name, $data, $class = null, $target = null){
         
         $html = '<a href="' . $this->uri->getDir() . '/' . $data . '"';
 
@@ -143,7 +146,6 @@ class View{
             $html .= $class;
             $html .= '"';
             }   
-        
 
         if ($target != null) {
             $html .= ' target=" '. $target . '"';
@@ -152,9 +154,6 @@ class View{
         $html .= '>' . $name . '</a>';
 
         return $html;
-        
     }
-
-
 }
 

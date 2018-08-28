@@ -39,7 +39,5 @@ class User{
         $this->view->display('thankYou', $this->data, $this->css, $this->js);
         
     }
-    
-    
 
 }
