@@ -12,7 +12,12 @@ class Post
     }
     
     public function __get($name)
-    {   
+    {  
         return $this->post[$name];
+    }
+    
+    public function check()
+    {  
+        return count($this->post);
     }
 }

@@ -5,9 +5,34 @@ $this->importElement('header');
 <?php 
 
 use app\lib\view;
-use app\lib\post;
+$view = new view\View;
+    
 
+?>
 
+<div class="encja">
+    <div class="id">
+        id
+    </div>
+    <div class="name">
+        nazwa
+    </div>
+    <div class="size">
+        rozmiar
+    </div>
+    <div class="type">
+        typ
+    </div>
+    <div class="data">
+        data dodania
+    </div>
+    <div class="delete">
+        usuń
+    </div>
+    <div style="clear:both;"></div> 
+</div>
+
+<?php
 foreach ($data['db'] as $one){
 ?>
 
@@ -29,8 +54,8 @@ foreach ($data['db'] as $one){
     </div>
     <div class="delete">
         <?php 
-        $view = new view\View;
-        echo $view->startForm('deleteItem');
+
+        echo $view->startForm('show');
         ?>
         <input type="hidden" name="toDeleteName" value=<?=$one->name?>>
         <input type="hidden" name="toDeleteId" value=<?=$one->id?>>

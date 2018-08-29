@@ -13,7 +13,6 @@ try {
     $app = new core\App();
     $app->render();
 } catch (Exception $e) {
-    echo $e;
     $app = new controller\Error(500,'Taka strona nie istnieje');
     $app -> showError();
 }

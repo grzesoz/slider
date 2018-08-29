@@ -66,3 +66,27 @@ header {
     width: 6%;
 }
 
+.slider{
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+}
+
+.slider img{
+    max-width: 400px;
+    max-height: 300px;
+}
+
+.plus, .minus{
+    float: left;
+    padding: 5px;
+}
+
+.nav{
+    margin-left: auto;
+    margin-right: auto;
+    width: 152px;
+}
+

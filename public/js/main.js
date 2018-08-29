@@ -1,26 +1,42 @@
-addUserField();
+slider();
 
-function field(numberOfPlayers) {
+function slider() {
+    $.ajax({
+        url: "getInfoAboutAllPictureToAjax",
+        method: "POST",
+        dataTypa: "JSON",
+        success: function(data)
+                {
+                    var data = jQuery.parseJSON(data);
+                    var dataLength = data.length;
+//                    console.log(data);
+                       var i=0; 
+                        $('.slider').html("<img src=/public/uploads/"+data[i]['name']+">");
 
-    for (var i = 1; i <= numberOfPlayers; i++) {
-        $('#playersName').append('Podaj imie zawodnika nr ' + i + ': <input type="text" name="player' + i + '" id="player' + i + '"><br/>');
-    };
-    $('#playersName').append('<button type="submit">Wyślij</button>');
+                        $('.plus').click(function() {
+                                if(i !==dataLength-1){
+                                    i++;
+                                }else{
+                                    i=0;
+                                }
+                            $('.slider').html("<img src=/public/uploads/"+data[i]['name']+">");
+                        });
+                        
+                        
+                        $('.minus').click(function() {
+                                if(i !==0){
+                                   i--;
+                                }else{
+                                   i = dataLength-1;
+                                }
+                            $('.slider').html("<img src=/public/uploads/"+data[i]['name']+">");
+                        });           
+                },
+        error : function(){
+                    console.log("Error");
+                }          
+    });
 };
 
-function addUserField() {
-    $('#players').on('keydown keyup', function () {
-        $('#playersName').html('');
 
-        var numberOfPlayers = $("#players").val();
-
-        if (numberOfPlayers < 4) {
-            $('#playersName').html('Liczba graczy jest mniejsza niż 4, a powinna być większa');
-        } else if ($.isNumeric(numberOfPlayers)) {
-            field(numberOfPlayers);
-        } else {
-            $('#playersName').html('Podaj liczbę a nie cokolwiek');
-        }
-    });
-}
 

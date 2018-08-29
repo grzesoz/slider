@@ -41,26 +41,28 @@ class User{
     }
     
     public function show(){
+        if($this->post->check() == 2)
+        {
+            $this ->db->deleteItem($this->post->toDeleteId);
+            $this->files -> deleteFile($this->post->toDeleteName);
+        }            
+            
         $this ->data['db'] = $this->db->getInfoAboutAllPicture();
         $this ->data['title']="Pokaż pliki";
         $this->view->display('showList', $this->data, $this->css, $this->js);
     }
     
-    public function deleteItem(){
- 
-        
-        $this ->db->deleteItem($this->post->toDeleteId);
-        
-//        $delete = new files\Files($_FILES);
-        $this->files -> deleteFile($this->post->toDeleteName);
-                
-        $this ->data['db'] = $this->db->getInfoAboutAllPicture();
-        $this ->data['title']="Pokaż pliki";
-        $this->view->display('showList', $this->data, $this->css, $this->js);
-    }
+//    public function deleteItem(){
+//        $this ->db->deleteItem($this->post->toDeleteId);
+//
+//        $this->files -> deleteFile($this->post->toDeleteName);
+//                
+//        $this ->data['db'] = $this->db->getInfoAboutAllPicture();
+//        $this ->data['title']="Pokaż pliki";
+//        $this->view->display('showList', $this->data, $this->css, $this->js);
+//    }
     
     public function thank_you() {
-//        $uploads = new files\Files($_FILES);
         switch ($this->files ->uploadImage()) {
             case 0:
                 $app = new controller\Error(500, 'Plik nie został dodany');
@@ -75,6 +77,11 @@ class User{
                 break;
         }
     }
+    
+    public function getInfoAboutAllPictureToAjax(){
+        echo json_encode($this->db->getInfoAboutAllPicture());
+    }
+    
 
 
 }
