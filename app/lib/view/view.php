@@ -93,7 +93,7 @@ class View{
         }
     }
         
-    public function startForm($action, $method = 'post', $id=null){
+    public function startForm($action, $method = 'post', $id=null, $enctype=null){
         
             $html = '<form action="'.$action.'"';
             $html .= 'method='.$method .' ';
@@ -101,8 +101,12 @@ class View{
             if($id!=null){
                 $html .= 'id="'.$id.'" ';
             }
-
-             $html .= '>';       
+            
+            if($enctype!=null){
+                $html .= 'enctype="'.$enctype.'" ';
+            }
+             
+             $html .= ' >';   
              
         return $html;
     }

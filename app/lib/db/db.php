@@ -1,18 +1,18 @@
 <?php
 
-namespace models\entity\Base;
+namespace app\lib\db;
 
-use lib\config\Configs;
-use PDO;
+use app\lib\config;
+use \PDO;
 
-class db extends Configs\config{
+class DB extends config\Config{
  
     private $config;
-    private $db;
-    private $host;
-    private $user;
-    private $password;
-    private $connection;
+    protected $db;
+    protected $host;
+    protected $user;
+    protected $password;
+    protected $connection;
     
     public function __construct($db = null, $host = null, $user = null, $password = null) {
         parent::__construct();
@@ -31,7 +31,7 @@ class db extends Configs\config{
         }
         
         try {
-            $this->connection = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $password, [
+            $this->connection = new PDO("mysql:host=$this->host;dbname=$this->db;charset=utf8", $this->user, $this->password, [
                 PDO::ATTR_EMULATE_PREPARES => false,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
         } catch (\PDOException $error) {

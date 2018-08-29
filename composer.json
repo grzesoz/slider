@@ -4,9 +4,13 @@
             "app\\lib\\view\\": "app/lib/view/",
             "app\\lib\\config\\": "app/lib/config/",
             "app\\lib\\uri\\": "app/lib/uri/",
+            "app\\lib\\files\\": "app/lib/files/",
             "app\\lib\\router\\": "app/lib/router/",
+			"app\\lib\\db\\": "app/lib/db/",
+			"app\\lib\\post\\": "app/lib/post/",
             "app\\controller\\": "app/controllers/",
-            "app\\core\\": "app/core/"
+            "app\\core\\": "app/core/",
+            "models\\entity\\dblocal\\": "app/models/entity/"
         }
     }
 }

@@ -7,11 +7,18 @@ namespace Composer\Autoload;
 class ComposerStaticInit185c154afb5921594a6369a5970f1b49
 {
     public static $prefixLengthsPsr4 = array (
+        'm' => 
+        array (
+            'models\\entity\\dblocal\\' => 22,
+        ),
         'a' => 
         array (
             'app\\lib\\view\\' => 13,
             'app\\lib\\uri\\' => 12,
             'app\\lib\\router\\' => 15,
+            'app\\lib\\post\\' => 13,
+            'app\\lib\\files\\' => 14,
+            'app\\lib\\db\\' => 11,
             'app\\lib\\config\\' => 15,
             'app\\core\\' => 9,
             'app\\controller\\' => 15,
@@ -19,6 +26,10 @@ class ComposerStaticInit185c154afb5921594a6369a5970f1b49
     );
 
     public static $prefixDirsPsr4 = array (
+        'models\\entity\\dblocal\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/models/entity',
+        ),
         'app\\lib\\view\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/lib/view',
@@ -30,6 +41,18 @@ class ComposerStaticInit185c154afb5921594a6369a5970f1b49
         'app\\lib\\router\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/lib/router',
+        ),
+        'app\\lib\\post\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/lib/post',
+        ),
+        'app\\lib\\files\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/lib/files',
+        ),
+        'app\\lib\\db\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/lib/db',
         ),
         'app\\lib\\config\\' => 
         array (

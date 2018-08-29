@@ -1,5 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 body{
     background-color: #81adf4;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
 }
 
 header {
@@ -10,3 +19,50 @@ header {
     padding:10px;
     float: left;
 }
+
+.encja{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.id, .name, .size, .type, .data, .delete {
+    height: 35px;
+}
+
+.id{
+    float: left;
+    border: 1px solid #343538;
+    padding: 3px;
+    width: 5%;
+    box-sizing: border-box;
+}
+
+.name, .size, .type, .data, .delete {
+    float: left;
+    border-top: 1px solid #343538;
+    border-right: 1px solid #343538;
+    border-bottom: 1px solid #343538;
+    padding: 3px;
+}
+
+.name{
+    width: 52%;
+}
+
+.size{
+    width: 10%;
+}
+
+.type{
+    width: 10%;
+}
+
+.data{
+    width: 17%;
+}
+
+.delete{
+    width: 6%;
+}
+

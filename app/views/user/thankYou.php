@@ -2,4 +2,4 @@
 $this->importElement('header');
 ?>
 
-Dziękujemy za dodanie plików
+Dziękujemy za dodanie pliku
