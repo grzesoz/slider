@@ -1,15 +1,16 @@
 slider();
 
 function slider() {
+    
     $.ajax({
         url: "getInfoAboutAllPictureToAjax",
         method: "POST",
         dataTypa: "JSON",
         success: function(data)
-                {
+                {  
                     var data = jQuery.parseJSON(data);
                     var dataLength = data.length;
-//                    console.log(data);
+                    
                        var i=0; 
                         $('.slider').html("<img src=/public/uploads/"+data[i]['name']+">");
 

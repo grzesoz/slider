@@ -15,6 +15,12 @@ header {
     background-color: #4a83e0;
 }
 
+.imie,.welcome{
+    text-align: center;
+    padding: 3px;
+    font-size: 30px;
+}
+
 .left{
     padding:10px;
     float: left;
@@ -82,6 +88,7 @@ header {
 .plus, .minus{
     float: left;
     padding: 5px;
+    cursor: pointer;
 }
 
 .nav{

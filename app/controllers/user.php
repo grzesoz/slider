@@ -31,6 +31,11 @@ class User{
     }
     
     public function index(){
+        $this ->data['title']="Witam";
+        $this->view->display('welcome', $this->data, $this->css, $this->js);
+    }
+    
+    public function slider(){
         $this ->data['title']="Slider";
         $this->view->display('slider', $this->data, $this->css, $this->js);
     }
@@ -81,7 +86,5 @@ class User{
     public function getInfoAboutAllPictureToAjax(){
         echo json_encode($this->db->getInfoAboutAllPicture());
     }
-    
-
 
 }
